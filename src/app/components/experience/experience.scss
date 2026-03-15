@@ -1,0 +1,42 @@
+#experience { background: var(--bg); }
+
+.exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+.exp-card {
+  background: var(--surface); border: 1px solid rgba(0,212,245,0.1);
+  border-radius: 10px; padding: 2.5rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  &::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+  &:hover { border-color: var(--accent-border); transform: translateY(-4px); }
+}
+
+.exp-period {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  &::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); display: inline-block;
+    animation: blink 2s infinite;
+  }
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.exp-role { font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+.exp-company { font-size: 0.88rem; color: var(--grey); margin-bottom: 1.5rem; }
+
+.exp-list { list-style: none; }
+.exp-list li {
+  font-size: 0.88rem; color: var(--grey); line-height: 1.6;
+  padding: 0.4rem 0 0.4rem 1.2rem; position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  &::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
+  &:last-child { border-bottom: none; }
+}
+
+@media (max-width: 960px) { .exp-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,75 @@
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-label">Portafolio</div>
+    <h2 class="sec-title">Proyectos <em>Destacados.</em></h2>
+
+    <div class="projects-grid">
+      <a class="pcard reveal"
+        *ngFor="let p of projects; let i = index"
+        [class.d1]="i % 3 === 1"
+        [class.d2]="i % 3 === 2"
+        [href]="p.link"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <div class="pcard-top">
+          <div class="pcard-icon">
+            <svg *ngIf="p.icon === 'shield'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg *ngIf="p.icon === 'flask'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-6 0v6l-4 9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1l-4-9V3"/></svg>
+            <svg *ngIf="p.icon === 'gamepad'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
+            <svg *ngIf="p.icon === 'syringe'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg>
+            <svg *ngIf="p.icon === 'droplets'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+            <svg *ngIf="p.icon === 'smartphone'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <div class="pcard-badges">
+            <span class="pcard-badge">{{ p.badge }}</span>
+          </div>
+        </div>
+
+        <div class="pcard-name">{{ p.name }}</div>
+        <div class="pcard-desc">{{ p.desc }}</div>
+        <div class="pcard-tags">
+          <span class="pcard-tag" *ngFor="let t of p.tags">{{ t }}</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Mini proyectos -->
+    <div class="mini-section reveal">
+      <div class="mini-header">
+        <div>
+          <div class="mini-header-title">Más proyectos realizados</div>
+          <div class="mini-header-sub">Landing Pages · Proyectos académicos · Personales · y más</div>
+        </div>
+      </div>
+      <div class="mini-grid">
+
+        <ng-container *ngFor="let m of miniProjects">
+          <!-- Con link -->
+          <a class="mini-item"
+            *ngIf="m.link"
+            [href]="m.link"
+            target="_blank"
+            rel="noopener noreferrer">
+            <div class="mini-name">{{ m.name }}</div>
+            <div class="mini-stack">{{ m.stack }}</div>
+          </a>
+          <!-- Sin link -->
+          <div class="mini-item" *ngIf="!m.link">
+            <div class="mini-name">{{ m.name }}</div>
+            <div class="mini-stack">{{ m.stack }}</div>
+          </div>
+        </ng-container>
+
+        <!-- Botón "muchos más" → perfil GitHub -->
+        <a class="mini-item mini-item--dashed"
+          href="https://github.com/MelissaZarate08"
+          target="_blank"
+          rel="noopener noreferrer">
+          <div>+ muchos más<br><span>en GitHub</span></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>

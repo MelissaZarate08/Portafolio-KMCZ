@@ -1,0 +1,127 @@
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label">Sobre mí</div>
+    <h2 class="sec-title">Código + <em>Diseño</em><br>en cada proyecto.</h2>
+
+    <div class="about-grid">
+      <div>
+        <p class="about-lead reveal">
+          Soy Karla Melissa, desarrolladora Full Stack con +2 años de experiencia
+          construyendo productos web y móviles de principio a fin.
+        </p>
+        <p class="about-body reveal d1">
+          Gestiono el <strong>ciclo completo del software</strong>: levantamiento de requerimientos,
+          planeación arquitectónica, documentación técnica, desarrollo frontend y backend,
+          bases de datos y despliegue. No solo codifico — lidero.
+        </p>
+        <p class="about-body reveal d2">
+          Mi especialidad es el ecosistema <strong>Frontend</strong> combinado con
+          <strong>UI/UX en Figma</strong>. Actualmente estudio Ingeniería en Desarrollo
+          de Software en la <strong>Universidad Politécnica de Chiapas</strong>.
+        </p>
+
+                <div class="info-grid reveal d2">
+        <a href="mailto:melissacorralzarate@gmail.com" class="info-chip">
+            <span class="ic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            </span>
+            <div class="info-chip-inner">
+            <span class="ic-label">Email</span>
+            <span class="ic-val">melissacorralzarate&#64;gmail.com</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/MelissaZarate08" target="_blank" class="info-chip">
+            <span class="ic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5
+                .28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2
+                c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68
+                1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                <path d="M9 18c-4.51 2-5-2-7-2"/>
+            </svg>
+            </span>
+            <div class="info-chip-inner">
+            <span class="ic-label">GitHub</span>
+            <span class="ic-val">MelissaZarate08</span>
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/karla-melissa-corral-z%C3%A1rate-274b5529b" target="_blank" class="info-chip">
+            <span class="ic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+            </span>
+            <div class="info-chip-inner">
+            <span class="ic-label">LinkedIn</span>
+            <span class="ic-val">karla-melissa-corral</span>
+            </div>
+        </a>
+
+        <div class="info-chip">
+            <span class="ic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+            </span>
+            <div class="info-chip-inner">
+            <span class="ic-label">Ubicación</span>
+            <span class="ic-val">San Cristóbal, Chiapas</span>
+            </div>
+        </div>
+
+        <a href="tel:+529671645751" class="info-chip">
+            <span class="ic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="14" height="20" x="5" y="2" rx="2"/>
+                <path d="M12 18h.01"/>
+            </svg>
+            </span>
+            <div class="info-chip-inner">
+            <span class="ic-label">Teléfono</span>
+            <span class="ic-val">+52 967 164 5751</span>
+            </div>
+        </a>
+        </div>
+
+        
+        <div class="soft-skills reveal d3">
+          <div class="soft-title">Soft Skills</div>
+          <div class="soft-grid">
+            <span class="soft-pill" *ngFor="let s of softSkills">{{ s }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-panel reveal d1">
+        <div class="skills-category" *ngFor="let cat of skills">
+          <div class="skills-cat-title">{{ cat.cat }}</div>
+          <div class="skill-row" *ngFor="let skill of cat.items">
+            <span class="skill-name">{{ skill.name }}</span>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-inner" [attr.data-w]="skill.pct"></div>
+            </div>
+            <span class="skill-pct">{{ skill.pct }}%</span>
+          </div>
+        </div>
+        <div class="tech-cloud">
+          <div class="tech-cloud-title">Stack completo (15+ tecnologías)</div>
+          <div class="tech-tags">
+            <span class="ttag" *ngFor="let t of techTags">{{ t }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

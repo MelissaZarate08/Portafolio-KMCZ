@@ -1,0 +1,74 @@
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3.5rem; height: 68px;
+  background: rgba(5, 12, 20, 0.92);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0, 212, 245, 0.1);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem; letter-spacing: 0.05em;
+  color: var(--accent); text-decoration: none;
+  span { color: var(--white); }
+}
+
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  animation: iconPulse 2.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(11, 247, 232, 0.6));
+}
+
+@keyframes iconPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.92); }
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem; letter-spacing: 0.05em;
+  color: var(--accent); text-decoration: none;
+  span { color: var(--white); }
+}
+
+.nav-links {
+  display: flex; gap: 0; list-style: none;
+  a {
+    display: block; padding: 0 1.2rem;
+    height: 68px; line-height: 68px;
+    color: var(--grey); text-decoration: none;
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    transition: color 0.2s; position: relative;
+    &::after {
+      content: ''; position: absolute; bottom: 0; left: 50%;
+      width: 0; height: 2px; background: var(--accent);
+      transition: width 0.3s, left 0.3s;
+    }
+    &:hover { color: var(--accent); }
+    &:hover::after { width: 100%; left: 0; }
+  }
+}
+
+.nav-cta {
+  background: var(--accent); color: var(--bg);
+  font-weight: 700; font-size: 0.82rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0 1.6rem; height: 40px; line-height: 40px;
+  border-radius: 100px; text-decoration: none;
+  display: flex; align-items: center;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+  &:hover { background: #33ddff; transform: scale(1.04); }
+}
+
+@media (max-width: 960px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+}

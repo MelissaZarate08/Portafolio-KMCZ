@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --bg:            #050c14;
+  --bg2:           #07111c;
+  --surface:       #0b1929;
+  --surface2:      #0e1f30;
+  --accent:        #0BF7E8;
+  --accent2:       #068e85;
+  --accent-dim:    rgba(8, 137, 157, 0.1);
+  --accent-border: rgba(0, 212, 245, 0.2);
+  --white:         #e8f7ff;
+  --grey:          #538682;
+  --grey2:         #498581;
+  --text:          #b6f4f0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px
+  );
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 3.5rem;
+}
+
+.sec-label {
+  display: flex; align-items: center; gap: 1rem;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1rem;
+  &::before { content: ''; width: 36px; height: 2px; background: var(--accent); }
+}
+
+.sec-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.95; letter-spacing: 0.03em;
+  margin-bottom: 3.5rem;
+  em { color: var(--accent); font-style: normal; }
+}
+
+.btn-fill {
+  background: var(--accent); color: var(--bg);
+  font-family: 'Outfit', sans-serif; font-weight: 700;
+  font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.9rem 2.2rem; border-radius: 4px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 0 30px rgba(0,212,245,0.2);
+  &:hover { background: #33ddff; transform: translateY(-2px); }
+}
+
+.btn-ghost {
+  color: var(--accent); border: 1.5px solid var(--accent-border);
+  font-family: 'Outfit', sans-serif; font-weight: 600;
+  font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.9rem 2.2rem; border-radius: 4px;
+  text-decoration: none; background: transparent;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  &:hover { border-color: var(--accent); background: var(--accent-dim); transform: translateY(-2px); }
+}
+
+.reveal {
+  opacity: 0; transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  &.on { opacity: 1; transform: translateY(0); }
+}
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+.d4 { transition-delay: 0.4s; }

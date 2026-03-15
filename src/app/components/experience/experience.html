@@ -1,0 +1,16 @@
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-label">Trayectoria</div>
+    <h2 class="sec-title">Experiencia <em>Profesional.</em></h2>
+    <div class="exp-grid">
+      <div class="exp-card reveal" *ngFor="let job of jobs; let i = index" [class.d1]="i === 1">
+        <div class="exp-period">{{ job.period }}</div>
+        <div class="exp-role">{{ job.role }}</div>
+        <div class="exp-company">{{ job.company }}</div>
+        <ul class="exp-list">
+          <li *ngFor="let item of job.items">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
